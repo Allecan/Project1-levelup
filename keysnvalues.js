@@ -1,12 +1,17 @@
-const object = { Mexico: true, Rusia: false, Wakanda: 0 };
+const object = { Wakanda: "Vibranium", Mexico: "Tacos", Rusia: "Vodka" };
 
-// keysNvalues =();
-console.log(object);
+const sort = Object.keys(object)
+  .sort()
+  .reduce((accumulator, key) => {
+    accumulator[key] = object[key];
 
-const keysNvalues = (obj) => {
-  console.log(Object.keys(obj));
-  console.log(Object.values(obj));
-  return `[[${Object.keys(obj)}], [${Object.values(obj)}]]`;
+    return accumulator;
+  }, {});
+
+const keysNvalues = (sort) => {
+  console.log(Object.keys(sort));
+  console.log(Object.values(sort));
+  return `[[${Object.keys(sort)}], [${Object.values(sort)}]]`;
 };
-const resu = keysNvalues(object);
+const resu = keysNvalues(sort);
 console.log(resu);
